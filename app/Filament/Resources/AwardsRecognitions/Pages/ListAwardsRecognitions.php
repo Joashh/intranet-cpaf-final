@@ -16,4 +16,13 @@ class ListAwardsRecognitions extends ListRecords
             CreateAction::make(),
         ];
     }
+
+    
+
+    protected function getHeaderWidgets(): array
+    {
+        return [
+            \App\Filament\Resources\AwardsRecognitions\Widgets\StatsOverview::class,
+        ];
+    }
 }

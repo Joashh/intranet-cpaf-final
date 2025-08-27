@@ -14,7 +14,7 @@ use Filament\Forms;
 use Filament\Forms\Components\DatePicker;
 use Filament\Actions\ViewAction;
 use Filament\Actions\DeleteAction;
-
+use Filament\Forms\Components\Placeholder;
 use Illuminate\Database\Eloquent\Builder;
 
 class AwardsRecognitionsTable
@@ -27,13 +27,15 @@ class AwardsRecognitionsTable
                     ->label('Type of Award')
                     ->sortable()
                     ->searchable()
-                    ->tooltip(fn($state) => $state),
+                    ->tooltip(fn($state) => $state)
+                    ->placeholder('N/A'),
 
                 TextColumn::make('award_title')
                     ->label('Title of Paper or Award')
                     ->sortable()
                     ->searchable()
                     ->limit(20)
+                    ->placeholder('N/A')
                     ->tooltip(fn($state) => $state),
 
                 TextColumn::make('name')
@@ -41,6 +43,7 @@ class AwardsRecognitionsTable
                     ->sortable()
                     ->searchable()
                     ->limit(20)
+                    ->placeholder('N/A')
                     ->tooltip(fn($state) => $state),
 
                 TextColumn::make('granting_organization')
@@ -48,6 +51,7 @@ class AwardsRecognitionsTable
                     ->sortable()
                     ->searchable()
                     ->limit(20)
+                    ->placeholder('N/A')
                     ->tooltip(fn($state) => $state),
 
                 TextColumn::make('date_awarded')

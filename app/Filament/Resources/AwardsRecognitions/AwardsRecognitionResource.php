@@ -13,14 +13,16 @@ use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
+use UnitEnum;
 
 class AwardsRecognitionResource extends Resource
 {
     protected static ?string $model = AwardsRecognitions::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    protected static string | BackedEnum | null $navigationIcon = 'heroicon-o-trophy';
 
-    protected static ?string $recordTitleAttribute = 'Awards Recognition';
+    protected static string | UnitEnum | null $navigationGroup = 'Accomplishments';
+    protected static ?string $recordTitleAttribute = 'award_title';
 
     public static function form(Schema $schema): Schema
     {
@@ -38,6 +40,7 @@ class AwardsRecognitionResource extends Resource
             //
         ];
     }
+   
 
     public static function getPages(): array
     {
